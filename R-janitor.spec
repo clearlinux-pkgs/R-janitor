@@ -4,23 +4,18 @@
 #
 Name     : R-janitor
 Version  : 1.1.0
-Release  : 1
+Release  : 2
 URL      : https://cran.r-project.org/src/contrib/janitor_1.1.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/janitor_1.1.0.tar.gz
 Summary  : Simple Tools for Examining and Cleaning Dirty Data
 Group    : Development/Tools
 License  : MIT
-Requires: R-dplyr
-Requires: R-pkgconfig
-Requires: R-purrr
-Requires: R-snakecase
-Requires: R-tidyr
 BuildRequires : R-dplyr
 BuildRequires : R-pkgconfig
 BuildRequires : R-purrr
 BuildRequires : R-snakecase
 BuildRequires : R-tidyr
-BuildRequires : clr-R-helpers
+BuildRequires : buildreq-R
 
 %description
 names; provide quick counts of variable combinations (i.e., frequency
@@ -41,11 +36,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1532216070
+export SOURCE_DATE_EPOCH=1533045681
 
 %install
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1532216070
+export SOURCE_DATE_EPOCH=1533045681
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
