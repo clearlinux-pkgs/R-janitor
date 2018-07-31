@@ -1,6 +1,6 @@
-1.1.0
-R-purrr
-R-snakecase
+1.1.1
+R-tidyr
 R-dplyr
 R-pkgconfig
-R-tidyr
+R-purrr
+R-snakecase
