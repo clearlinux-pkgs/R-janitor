@@ -4,34 +4,26 @@
 #
 Name     : R-janitor
 Version  : 1.1.1
-Release  : 6
+Release  : 7
 URL      : https://cran.r-project.org/src/contrib/janitor_1.1.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/janitor_1.1.1.tar.gz
 Summary  : Simple Tools for Examining and Cleaning Dirty Data
 Group    : Development/Tools
 License  : MIT
-Requires: R-dplyr
-Requires: R-pkgconfig
-Requires: R-purrr
-Requires: R-snakecase
-Requires: R-tidyr
+Requires: R-highr
+Requires: R-utf8
 BuildRequires : R-dplyr
+BuildRequires : R-highr
 BuildRequires : R-pkgconfig
 BuildRequires : R-purrr
 BuildRequires : R-snakecase
 BuildRequires : R-tidyr
+BuildRequires : R-utf8
 BuildRequires : buildreq-R
 
 %description
-names; provide quick counts of variable combinations (i.e., frequency
-    tables and crosstabs); and isolate duplicate records. Other janitor functions
-    nicely format the tabulation results. These tabulate-and-report functions
-    approximate popular features of SPSS and Microsoft Excel. This package
-    follows the principles of the "tidyverse" and works well with the pipe function
-    %>%. janitor was built with beginning-to-intermediate R users in mind and is
-    optimized for user-friendliness. Advanced R users can already do everything
-    covered here, but with janitor they can do it faster and save their thinking for
-    the fun stuff.
+> Data scientists, according to interviews and expert estimates, spend from 50 percent to 80 percent of their time mired in this more mundane labor of collecting and preparing unruly digital data, before it can be explored for useful nuggets.
+> -- *"[For Big-Data Scientists, 'Janitor Work' Is Key Hurdle to Insight](http://www.nytimes.com/2014/08/18/technology/for-big-data-scientists-hurdle-to-insights-is-janitor-work.html)" - The New York Times, 2014*
 
 %prep
 %setup -q -c -n janitor
@@ -41,11 +33,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1533072656
+export SOURCE_DATE_EPOCH=1552860665
 
 %install
+export SOURCE_DATE_EPOCH=1552860665
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1533072656
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -80,8 +72,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library janitor|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  janitor || :
 
 
 %files
@@ -119,3 +110,24 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/janitor/help/paths.rds
 /usr/lib64/R/library/janitor/html/00Index.html
 /usr/lib64/R/library/janitor/html/R.css
+/usr/lib64/R/library/janitor/tests/testthat.R
+/usr/lib64/R/library/janitor/tests/testthat/test-add-totals.R
+/usr/lib64/R/library/janitor/tests/testthat/test-adorn-crosstab.R
+/usr/lib64/R/library/janitor/tests/testthat/test-adorn-ns.R
+/usr/lib64/R/library/janitor/tests/testthat/test-adorn-pct-formatting.R
+/usr/lib64/R/library/janitor/tests/testthat/test-adorn-percentages.R
+/usr/lib64/R/library/janitor/tests/testthat/test-adorn-rounding.R
+/usr/lib64/R/library/janitor/tests/testthat/test-adorn-title.R
+/usr/lib64/R/library/janitor/tests/testthat/test-clean-NAs.R
+/usr/lib64/R/library/janitor/tests/testthat/test-clean-names.R
+/usr/lib64/R/library/janitor/tests/testthat/test-crosstab.R
+/usr/lib64/R/library/janitor/tests/testthat/test-date-conversion.R
+/usr/lib64/R/library/janitor/tests/testthat/test-get-dupes.R
+/usr/lib64/R/library/janitor/tests/testthat/test-get-level-groups.R
+/usr/lib64/R/library/janitor/tests/testthat/test-remove-empties.R
+/usr/lib64/R/library/janitor/tests/testthat/test-row-to-names.R
+/usr/lib64/R/library/janitor/tests/testthat/test-tabyl-classifiers.R
+/usr/lib64/R/library/janitor/tests/testthat/test-tabyl.R
+/usr/lib64/R/library/janitor/tests/testthat/test-top-levels.R
+/usr/lib64/R/library/janitor/tests/testthat/test-use-first-valid-of.R
+/usr/lib64/R/library/janitor/tests/testthat/test-utilities.R

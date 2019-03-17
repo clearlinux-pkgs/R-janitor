@@ -1,6 +1,8 @@
 1.1.1
-R-tidyr
 R-dplyr
+R-highr
 R-pkgconfig
 R-purrr
 R-snakecase
+R-tidyr
+R-utf8
