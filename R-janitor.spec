@@ -4,14 +4,12 @@
 #
 Name     : R-janitor
 Version  : 1.1.1
-Release  : 8
+Release  : 9
 URL      : https://cran.r-project.org/src/contrib/janitor_1.1.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/janitor_1.1.1.tar.gz
 Summary  : Simple Tools for Examining and Cleaning Dirty Data
 Group    : Development/Tools
 License  : MIT
-Requires: R-highr
-Requires: R-utf8
 BuildRequires : R-dplyr
 BuildRequires : R-highr
 BuildRequires : R-pkgconfig
@@ -33,10 +31,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552860665
+export SOURCE_DATE_EPOCH=1552892437
 
 %install
-export SOURCE_DATE_EPOCH=1552860665
+export SOURCE_DATE_EPOCH=1552892437
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
