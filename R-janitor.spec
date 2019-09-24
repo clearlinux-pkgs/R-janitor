@@ -4,31 +4,36 @@
 #
 Name     : R-janitor
 Version  : 1.2.0
-Release  : 14
+Release  : 15
 URL      : https://cran.r-project.org/src/contrib/janitor_1.2.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/janitor_1.2.0.tar.gz
 Summary  : Simple Tools for Examining and Cleaning Dirty Data
 Group    : Development/Tools
 License  : MIT
 Requires: R-dplyr
+Requires: R-magrittr
 Requires: R-purrr
+Requires: R-rlang
 Requires: R-snakecase
 Requires: R-tidyr
 BuildRequires : R-dplyr
+BuildRequires : R-magrittr
 BuildRequires : R-purrr
+BuildRequires : R-rlang
 BuildRequires : R-snakecase
 BuildRequires : R-tidyr
 BuildRequires : buildreq-R
 
 %description
-> Data scientists, according to interviews and expert estimates, spend
-> from 50 percent to 80 percent of their time mired in this more mundane
-> labor of collecting and preparing unruly digital data, before it can
-> be explored for useful nuggets.
->
-> â *â[For Big-Data Scientists, âJanitor Workâ Is Key Hurdle to
-> Insight](http://www.nytimes.com/2014/08/18/technology/for-big-data-scientists-hurdle-to-insights-is-janitor-work.html)â
-> - The New York Times, 2014*
+names; provide quick counts of variable combinations (i.e., frequency
+    tables and crosstabs); and isolate duplicate records. Other janitor functions
+    nicely format the tabulation results. These tabulate-and-report functions
+    approximate popular features of SPSS and Microsoft Excel. This package
+    follows the principles of the "tidyverse" and works well with the pipe function
+    %>%. janitor was built with beginning-to-intermediate R users in mind and is
+    optimized for user-friendliness. Advanced R users can already do everything
+    covered here, but with janitor they can do it faster and save their thinking for
+    the fun stuff.
 
 %prep
 %setup -q -c -n janitor
@@ -37,13 +42,13 @@ BuildRequires : buildreq-R
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1555864641
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1569290841
 
 %install
-export SOURCE_DATE_EPOCH=1555864641
+export SOURCE_DATE_EPOCH=1569290841
 rm -rf %{buildroot}
-export LANG=C
+export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -72,7 +77,7 @@ R CMD INSTALL --preclean --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} 
 cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
