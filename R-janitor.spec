@@ -4,7 +4,7 @@
 #
 Name     : R-janitor
 Version  : 2.1.0
-Release  : 31
+Release  : 32
 URL      : https://cran.r-project.org/src/contrib/janitor_2.1.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/janitor_2.1.0.tar.gz
 Summary  : Simple Tools for Examining and Cleaning Dirty Data
